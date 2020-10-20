@@ -53,7 +53,7 @@ namespace GenericsAndNonGenerics
                 throw new Exception("all the numbers are equal");
         }
         /// <summary>
-        /// MaxOfThreeNumbers function is using compareTo Method to find the greatest number of three which are float
+        /// MaxOfThreeNumbers function is using compareTo Method to find the greatest number of three which are String Datatype
         /// If all the three numbers are same it will throw an exception
         /// UC 3
         /// </summary>
@@ -75,5 +75,6 @@ namespace GenericsAndNonGenerics
             else
                 throw new Exception("all the numbers are equal");
         }
+        
     }
 }
