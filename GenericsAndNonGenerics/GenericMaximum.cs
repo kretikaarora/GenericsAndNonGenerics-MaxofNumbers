@@ -11,7 +11,23 @@ namespace GenericsAndNonGenerics
 /// </summary>
 /// <typeparam name="T"></typeparam>
      public class GenericMaximum <T> where T:IComparable
-    {   
+    {
+        public T firstNumber, secondNumber, thirdNumber;
+        /// <summary>
+        /// Parameterised Constructor with three parameters
+        /// During Test case now we need to add these parameters there while making an object of the class
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <param name="thirdNumber"></param>
+        public GenericMaximum( T firstNumber, T secondNumber, T thirdNumber)
+        {
+            this.firstNumber = firstNumber;
+            this.firstNumber = firstNumber;
+            this.secondNumber = secondNumber;
+        }
+
+
         /// <summary>
         /// MaxFunction  is generic in nature 
         /// returns maximum number 

@@ -86,7 +86,7 @@ namespace GenericsAndNonGenericsUnitTesting
             //Arrange
             int expected = 50;
             //Act          
-            GenericMaximum<int> obj = new GenericMaximum<int>();
+            GenericMaximum<int> obj = new GenericMaximum<int>(firstNumber,  secondNumber, thirdNumber);
             int actual = obj.MaxFunction1(firstNumber, secondNumber, thirdNumber);
             //Assert
             Assert.AreEqual(expected, actual);
@@ -109,7 +109,7 @@ namespace GenericsAndNonGenericsUnitTesting
             //Arrange
             float expected = 50.1f;
             //Act    
-            GenericMaximum<float> obj = new GenericMaximum<float>();
+            GenericMaximum<float> obj = new GenericMaximum<float>(firstNumber,  secondNumber, thirdNumber);
             float actual = obj.MaxFunction1(firstNumber, secondNumber, thirdNumber);
             //Assert
             Assert.AreEqual(expected, actual);
@@ -131,7 +131,7 @@ namespace GenericsAndNonGenericsUnitTesting
             //Arrange
             string expected = "50";
             //Act          
-            GenericMaximum<string> obj = new GenericMaximum<string>();
+            GenericMaximum<string> obj = new GenericMaximum<string>(firstNumber, secondNumber, thirdNumber);
             string actual = obj.MaxFunction1(firstNumber, secondNumber, thirdNumber);
             //Assert
             Assert.AreEqual(expected, actual);
