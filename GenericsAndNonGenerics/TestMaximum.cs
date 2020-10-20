@@ -29,6 +29,15 @@ namespace GenericsAndNonGenerics
             else
                 throw new Exception("all the numbers are equal");
         }
+        /// <summary>
+        /// MaxOfThreeNumbers function is using compareTo Method to find the greatest number of three which are float
+        /// If all the three numbers are same it will throw an exception
+        /// UC 2
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <param name="thirdNumber"></param>
+        /// <returns></returns>
         public static float MaxOfThreeFloats(float firstNumber, float secondNumber, float thirdNumber)
         {
             Console.WriteLine("Maximum Number using non generic for float value");
