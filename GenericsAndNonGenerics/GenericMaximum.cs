@@ -41,15 +41,31 @@ namespace GenericsAndNonGenerics
         {
             Console.WriteLine("Maximum of three Numbers using Generic Method ");
             if (firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) > 0)
+            {
+                PrintMax(firstNumber);
                 return firstNumber;
+            }
+                
             else if (secondNumber.CompareTo(firstNumber) > 0 && secondNumber.CompareTo(thirdNumber) > 0)
+            {
+                PrintMax(secondNumber);
                 return secondNumber;
+            }
+                
             else if (thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) > 0)
+            {
+                PrintMax(thirdNumber);
                 return thirdNumber;
+            }
+                
             ///throwing exception when numbers are equal
             else
                 throw new Exception("all the numbers are equal");
 
+        }
+        public void PrintMax(T maxNumber)
+        {
+            Console.WriteLine("The maximum number is : {0} ",maxNumber);
         }
     }
 }
