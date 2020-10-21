@@ -20,6 +20,7 @@ namespace GenericsAndNonGenerics
         /// Parameterised Constructor with multiple parameters depending upon demand of user
         /// params is used when we dont know how many parameters are there
         /// </summary>        
+
         public GenericMaximum(params T[] inputParameters)
         {
             this.inputParameters = inputParameters;
@@ -38,7 +39,7 @@ namespace GenericsAndNonGenerics
         }
         public void PrintGenericMaximum(T maxNumber)
         {
-            Console.WriteLine("The maximum number is {0}",maxNumber);
+            Console.WriteLine("The maximum number is {0}",maxNumber)
         }
 
         /// <summary>
@@ -76,9 +77,11 @@ namespace GenericsAndNonGenerics
         /// Printing the maximum number
         /// </summary>
         /// <param name="maxNumber"></param>
+
         public void PrintMax(T maxNumber)
         {
             Console.WriteLine("The maximum number is : {0} ", maxNumber);
         }
     }
 }
+
