@@ -1,4 +1,11 @@
-﻿using System;
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="GenericMaximum.cs" company="Bridgelabz">
+//   Copyright © 2018 Company
+// </copyright>
+// <creator Name="Kretika Arora"/>
+// --------------------------------------------------------------------------------------------------------------------
+namespace UserRegistration
+using System;
 using System.Collections.Generic;
 using System.Text;
 
