@@ -6,7 +6,6 @@ namespace GenericsAndNonGenericsUnitTesting
     [TestClass]
     public class UnitTest1
     {
-
         /// <summary>
         /// Testing Of Max Of Three Numbers using Non Generic Method
         /// TC 1.1 , TC 1.2 , TC 1.3
