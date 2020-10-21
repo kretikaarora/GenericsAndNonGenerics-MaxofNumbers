@@ -4,29 +4,42 @@ using System.Text;
 
 namespace GenericsAndNonGenerics
 {
-/// <summary>
-/// GenericMaximum Class with Generic Data Type T 
-/// where T:Icomparable is used to give access to primitive data types
-/// We are able to use Compare to inbuilt function because of Icompare
-/// </summary>
-/// <typeparam name="T"></typeparam>
-     public class GenericMaximum <T> where T:IComparable
+    /// <summary>
+    /// GenericMaximum Class with Generic Data Type T 
+    /// where T:Icomparable is used to give access to primitive data types
+    /// We are able to use Compare to inbuilt function because of Icompare
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class GenericMaximum<T> where T : IComparable
     {
-        public T firstNumber, secondNumber, thirdNumber;
         /// <summary>
-        /// Parameterised Constructor with three parameters
-        /// During Test case now we need to add these parameters there while making an object of the class
+        /// array which can take multiple Parameters
         /// </summary>
-        /// <param name="firstNumber"></param>
-        /// <param name="secondNumber"></param>
-        /// <param name="thirdNumber"></param>
-        public GenericMaximum( T firstNumber, T secondNumber, T thirdNumber)
+        T[] inputParameters;
+        /// <summary>
+        /// Parameterised Constructor with multiple parameters depending upon demand of user
+        /// params is used when we dont know how many parameters are there
+        /// </summary>        
+        public GenericMaximum(params T[] inputParameters)
         {
-            this.firstNumber = firstNumber;
-            this.firstNumber = firstNumber;
-            this.secondNumber = secondNumber;
+            this.inputParameters = inputParameters;
         }
-
+        /// <summary>
+        /// Function for sorting th array and returning max number 
+        /// </summary>
+        /// <param name="inputParameters"></param>
+        /// <returns></returns>
+        public T SortingNumbers(params T[] inputParameters)
+        {
+            Array.Sort(inputParameters);
+            T maxNumber = inputParameters[inputParameters.Length - 1];
+            PrintGenericMaximum(maxNumber);
+            return maxNumber;
+        }
+        public void PrintGenericMaximum(T maxNumber)
+        {
+            Console.WriteLine("The maximum number is {0}",maxNumber);
+        }
 
         /// <summary>
         /// MaxFunction  is generic in nature 
@@ -39,33 +52,33 @@ namespace GenericsAndNonGenerics
         /// <returns></returns>
         public T MaxFunction1(T firstNumber, T secondNumber, T thirdNumber)
         {
-            Console.WriteLine("Maximum of three Numbers using Generic Method ");
+            Console.WriteLine("Maximum of Numbers using Generic Method ");
             if (firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) > 0)
             {
                 PrintMax(firstNumber);
                 return firstNumber;
             }
-                
             else if (secondNumber.CompareTo(firstNumber) > 0 && secondNumber.CompareTo(thirdNumber) > 0)
             {
                 PrintMax(secondNumber);
                 return secondNumber;
             }
-                
             else if (thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) > 0)
             {
                 PrintMax(thirdNumber);
                 return thirdNumber;
             }
-                
             ///throwing exception when numbers are equal
             else
                 throw new Exception("all the numbers are equal");
-
         }
+        /// <summary>
+        /// Printing the maximum number
+        /// </summary>
+        /// <param name="maxNumber"></param>
         public void PrintMax(T maxNumber)
         {
-            Console.WriteLine("The maximum number is : {0} ",maxNumber);
+            Console.WriteLine("The maximum number is : {0} ", maxNumber);
         }
     }
 }

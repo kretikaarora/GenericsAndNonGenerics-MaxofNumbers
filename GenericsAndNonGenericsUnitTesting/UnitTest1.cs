@@ -86,8 +86,8 @@ namespace GenericsAndNonGenericsUnitTesting
             //Arrange
             int expected = 50;
             //Act          
-            GenericMaximum<int> obj = new GenericMaximum<int>(firstNumber,  secondNumber, thirdNumber);
-            int actual = obj.MaxFunction1(firstNumber, secondNumber, thirdNumber);
+            GenericMaximum<int> obj = new GenericMaximum<int>();
+            int actual = obj.SortingNumbers(firstNumber, secondNumber, thirdNumber);
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -109,7 +109,7 @@ namespace GenericsAndNonGenericsUnitTesting
             //Arrange
             float expected = 50.1f;
             //Act    
-            GenericMaximum<float> obj = new GenericMaximum<float>(firstNumber,  secondNumber, thirdNumber);
+            GenericMaximum<float> obj = new GenericMaximum<float>();
             float actual = obj.MaxFunction1(firstNumber, secondNumber, thirdNumber);
             //Assert
             Assert.AreEqual(expected, actual);
@@ -131,11 +131,78 @@ namespace GenericsAndNonGenericsUnitTesting
             //Arrange
             string expected = "50";
             //Act          
-            GenericMaximum<string> obj = new GenericMaximum<string>(firstNumber, secondNumber, thirdNumber);
+            GenericMaximum<string> obj = new GenericMaximum<string>();
             string actual = obj.MaxFunction1(firstNumber, secondNumber, thirdNumber);
             //Assert
             Assert.AreEqual(expected, actual);
         }
-    } 
-}
+        /// <summary>
+        /// Testing Of Max Of Three Numbers using  Generic Method Using Params
+        /// Refractoring the code
+        /// TC 4.4
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <param name="thirdNumber"></param>
+        [TestMethod]
+        [DataRow(50, 20, 30)]
+        [DataRow(20, 50, 30)]
+        [DataRow(20, 30, 50)]
+        public void TestOfMaxOfThreeNumbersWithIntegersUsingGenericWithParams(int[] inputParameters)
+        {
+            //Arrange
+            int expected = 50;
+            //Act          
+            GenericMaximum<int> obj = new GenericMaximum<int>();
+            int actual = obj.SortingNumbers(inputParameters);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
+        /// <summary>
+        /// Testing Of Max Of Three Float Numbers using Generic Method Using Params
+        /// Refractoring Code
+        /// TC 4.5
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <param name="thirdNumber"></param>
+        [DataRow(50.1f, 20.8f, 30.5f)]
+        [DataRow(20.8f, 50.1f, 30.5f)]
+        [DataRow(20.8f, 30.5f, 50.1f)]
+        [TestMethod]
+        public void TestOfMaxOfThreeNumbersWithFloatValuesUsingGenericUsingParams(float[] inputParameters)
+        {
+            //Arrange
+            float expected = 50.1f;
+            //Act    
+            GenericMaximum<float> obj = new GenericMaximum<float>();
+            float actual = obj.SortingNumbers(inputParameters);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Testing Of Max Of Three Numbers using Generic Method Using Params
+        /// Refractoring Code
+        /// TC 4.6
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <param name="thirdNumber"></param>
+        [TestMethod]
+        [DataRow("50", "20", "30")]
+        [DataRow("20", "50", "30")]
+        [DataRow("20", "30", "50")]
+        public void TestOfMaxOfThreeNumbersWithStringUsingGenericUsingParams(string[] inputParameters)
+        {
+            //Arrange
+            string expected = "50";
+            //Act          
+            GenericMaximum<string> obj = new GenericMaximum<string>();
+            string actual = obj.SortingNumbers(inputParameters);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}
