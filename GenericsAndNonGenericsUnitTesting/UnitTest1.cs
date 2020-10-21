@@ -13,17 +13,41 @@ namespace GenericsAndNonGenericsUnitTesting
             /// <param name="firstNumber"></param>
             /// <param name="secondNumber"></param>
             /// <param name="thirdNumber"></param>
+            [TestMethod]
             [DataRow(50, 20, 30)]
             [DataRow(20, 50, 30)]
             [DataRow(20, 30, 50)]
             [DataRow(50, 50, 50)]
-            [TestMethod]
+            
             public void TestOfMaxOfThreeNumbersWithIntegers(int firstNumber, int secondNumber, int thirdNumber)
             {
                 //Arrange
                 int expected = 50;
                 //Act          
                 int actual = TestMaximum.MaxOfThreeNumbers(firstNumber, secondNumber, thirdNumber);
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            /// <summary>
+            /// Testing Of Max Of Three Float Numbers using Non Generic Method
+            /// TC 2.1 , TC 2.2 , TC 2.3
+            /// </summary>
+            /// <param name="firstNumber"></param>
+            /// <param name="secondNumber"></param>
+            /// <param name="thirdNumber"></param>
+            [DataRow(50.1f, 20.8f, 30.5f)]
+            [DataRow(20.8f, 50.1f, 30.5f)]
+            [DataRow(20.8f, 30.5f, 50.1f)]
+            [DataRow(50.1f, 50.1f, 50.1f)]
+            [TestMethod]
+
+             public void TestOfMaxOfThreeNumbersWithFloatValues(float firstNumber, float secondNumber, float thirdNumber)
+            {
+                //Arrange
+                float expected = 50.1f;
+                //Act          
+                float actual = TestMaximum.MaxOfThreeFloats(firstNumber, secondNumber, thirdNumber);
                 //Assert
                 Assert.AreEqual(expected, actual);
             }
