@@ -135,7 +135,6 @@ namespace GenericsAndNonGenericsUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
         /// <summary>
         /// Testing Of Max Of Three Numbers using  Generic Method Using Params
         /// Refractoring the code
@@ -204,7 +203,5 @@ namespace GenericsAndNonGenericsUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
-    } 
+    }
 }
-
