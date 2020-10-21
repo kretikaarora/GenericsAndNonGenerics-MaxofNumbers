@@ -12,19 +12,27 @@ namespace GenericsAndNonGenerics
     /// <typeparam name="T"></typeparam>
     public class GenericMaximum<T> where T : IComparable
     {
-        T firstNumber, secondNumber, thirdNumber;
         /// <summary>
-        /// Parameterised Constructor with three parameters
-        /// During Test case now we need to add these parameters there while making an object of the class
+        /// array which can take multiple Parameters
         /// </summary>
-        /// <param name="firstNumber"></param>
-        /// <param name="secondNumber"></param>
-        /// <param name="thirdNumber"></param>
-        public GenericMaximum(T firstNumber, T secondNumber, T thirdNumber)
+        T[] inputParameters;
+        /// <summary>
+        /// Parameterised Constructor with multiple parameters depending upon demand of user
+        /// params is used when we dont know how many parameters are there
+        /// </summary>        
+        public GenericMaximum( params T[] inputParameters)
         {
-            this.firstNumber = firstNumber;
-            this.secondNumber = secondNumber;
-            this.thirdNumber = thirdNumber;
+            this.inputParameters = inputParameters;
+        }
+        /// <summary>
+        /// Function for sorting th array and returning max number 
+        /// </summary>
+        /// <param name="inputParameters"></param>
+        /// <returns></returns>
+        public T SortingNumbers(params T[] inputParameters)
+        {
+            Array.Sort(inputParameters);
+            return inputParameters[inputParameters.Length - 1];
         }
 
         /// <summary>
@@ -57,11 +65,15 @@ namespace GenericsAndNonGenerics
             ///throwing exception when numbers are equal
             else
                 throw new Exception("all the numbers are equal");
-
         }
+        /// <summary>
+        /// Printing the maximum number
+        /// </summary>
+        /// <param name="maxNumber"></param>       
         public void PrintMax(T maxNumber)
         {
             Console.WriteLine("The maximum number is : {0} ", maxNumber);
         }
     }
 }
+

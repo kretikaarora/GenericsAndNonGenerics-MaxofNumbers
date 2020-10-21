@@ -75,6 +75,5 @@ namespace GenericsAndNonGenerics
             else
                 throw new Exception("all the numbers are equal");
         }
-
     }
 }
