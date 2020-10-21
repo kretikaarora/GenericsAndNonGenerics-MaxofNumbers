@@ -6,7 +6,6 @@ namespace GenericsAndNonGenericsUnitTesting
     [TestClass]
     public class UnitTest1
     {
-
         /// <summary>
         /// Testing Of Max Of Three Numbers using Non Generic Method
         /// TC 1.1 , TC 1.2 , TC 1.3
@@ -108,7 +107,7 @@ namespace GenericsAndNonGenericsUnitTesting
         {
             //Arrange
             float expected = 50.1f;
-            //Act    
+            //Act   
             GenericMaximum<float> obj = new GenericMaximum<float>();
             float actual = obj.MaxFunction1(firstNumber, secondNumber, thirdNumber);
             //Assert
@@ -136,6 +135,7 @@ namespace GenericsAndNonGenericsUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
         /// <summary>
         /// Testing Of Max Of Three Numbers using  Generic Method Using Params
         /// Refractoring the code
@@ -204,6 +204,7 @@ namespace GenericsAndNonGenericsUnitTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
     } 
 }
 

@@ -69,10 +69,11 @@ namespace GenericsAndNonGenerics
         /// <summary>
         /// Printing the maximum number
         /// </summary>
-        /// <param name="maxNumber"></param>
+        /// <param name="maxNumber"></param>       
         public void PrintMax(T maxNumber)
         {
             Console.WriteLine("The maximum number is : {0} ", maxNumber);
         }
     }
 }
+
